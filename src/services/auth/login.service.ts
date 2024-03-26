@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { Request, Response } from "express";
-import { User } from "../../entities/user.entity";
+import { User } from "../../entities/auth/user.entity";
 import { AppDataSource } from "../../config/data-source";
 import {
   ERROR_MESSAGES,

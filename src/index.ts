@@ -2,7 +2,6 @@ import { AppDataSource } from "./config/data-source";
 import bodyParser from "body-parser";
 import express from "express";
 import "dotenv/config";
-import "reflect-metadata";
 import cookieParser from "cookie-parser";
 import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "./constants";
 import router from "./routes/index-routes";

@@ -22,7 +22,7 @@ export const ERROR_MESSAGES = {
   },
 
   //Download file from server side
-  FILE_DWNLD_FAILED:''
+  FILE_DWNLD_FAILED: "",
 };
 
 export const SUCCESS_MESSAGES = {
@@ -47,4 +47,50 @@ export const HTTP_STATUS_CODES = {
   NOT_FOUND: 404,
   VALIDATION_FAILED: 417,
   INTERNAL_SERVER_ERROR: 500,
+};
+
+export const ALL_SUCCESS_MESSAGES = {
+  MOVIE_ADDED: "New Movie Added",
+  MOVIE_FETCH: "Data Fetch",
+
+  THEATER_ADDED: "New Theater Added",
+  THEATER_FETCH: "Movie Data Fetch",
+
+  SCREEN_ADDED: "New Screen Added",
+
+  SHOWTIME_ADDED: "New Showtime added.",
+
+  SEATS_ADDED: "New Seats added.",
+
+  SEAT_LABELS_ADDED: "Site Label Fetch",
+
+  //voucher
+  VOUCHER_USED: "New Voucher Add",
+  VOUCHER_FOUND: "New Voucher Found",
+  VOUCHER_UPDATE: "New Voucher Update",
+  VOUCHER_DELETE: "New Voucher Delete",
+};
+export const ALL_ERROR_MESSAGES = {
+  MOVIE_ADDED: "New Movie not Add",
+  MOVIE_FETCH: "Movies Data not Fetch",
+  MOVIE_NOTFOUND: "Movies Not Found",
+
+  THEATER_ADDED: "New Theater not Added",
+  THEATER_FETCH: "Theater Data not Fetch",
+  THEATER_NOTFOUND: "Theater Not Found",
+
+  SCREEN_NOTFOUND: "Screen Not Found",
+
+  SHOWTIME_ADDED: "New Showtime Not added.",
+
+  SEATS_ADDED: "New seats Not added.",
+
+  SEAT_LABELS_ADDED: "Site Label Not Fetch",
+  SEAT_LABELS_NOTFOUND: "Seat label not found.",
+
+  //voucher
+  VOUCHER_USED: "New Voucher not Add",
+  VOUCHER_NOTFOUND: "New Voucher not Found",
+  VOUCHER_UPDATE: "New Voucher not Update",
+  VOUCHER_DELETE: "New Voucher not Delete",
 };

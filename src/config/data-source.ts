@@ -1,4 +1,5 @@
 import { DataSource } from "typeorm";
+import "reflect-metadata";
 
 interface ConfigType {
   host: string;
@@ -19,8 +20,9 @@ const postgresConfig: ConfigType = {
 export const AppDataSource = new DataSource({
   ...postgresConfig,
   type: "postgres",
-  entities: ["src/entities/*{.ts,.js}"],
-  synchronize: true,
+  // entities: ["src/entities/**/*{.ts,.js}"],
+  entities: ["src/entities/*/*{.ts,.js}"],
+  synchronize: false,
   logging: true,
   migrationsTableName: "migrationtable",
   migrations: ["src/migrations/*{.ts,.js}"],
