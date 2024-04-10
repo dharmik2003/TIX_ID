@@ -1,15 +1,8 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  ManyToMany,
-  OneToMany,
-  UpdateDateColumn,
-  CreateDateColumn,
-} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
 import { TheaterMovies } from "../theater-movies/theater-movie.entity";
-import { Time } from "../time-stamp/time.entities";
 import { ShowTime } from "../show-time/showtime.entity";
+import { MyShow } from "../myshow/myshow.entity";
+import { Time } from "../time-stamp/time.entities";
 
 @Entity({ name: "movies" })
 export class Movies extends Time {
@@ -39,4 +32,7 @@ export class Movies extends Time {
 
   @OneToMany(() => ShowTime, (showTime) => showTime.movie)
   showtimes: ShowTime[];
+
+  @OneToMany(() => MyShow, (myshow) => myshow.movie)
+  myshows: MyShow[];
 }

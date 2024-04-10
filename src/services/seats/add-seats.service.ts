@@ -11,14 +11,28 @@ import { Error, Success } from "../../utils/response.utils";
 import { Screens } from "../../entities/screens/screen.entity";
 import { Seats } from "../../entities/seats/seats.entity";
 import { SeatLabel } from "../../entities/seat-label/seat-label.entity";
+import { ShowTime } from "../../entities/show-time/showtime.entity";
 
 export const addSeatSearvice = async (req: Request, res: Response) => {
   try {
-    const { screenId, row_num, seat_num } = req.body;
+    const { showtimeId, screenId, row_num, seat_num } = req.body;
 
     const screenRepository = AppDataSource.getRepository(Screens);
     const seatsRepository = AppDataSource.getRepository(Seats);
     const seatlabelRepository = AppDataSource.getRepository(SeatLabel);
+    const showtimeRepository = AppDataSource.getRepository(ShowTime);
+
+    const existingshowtime = await showtimeRepository.findOne({
+      where: { id: +showtimeId, screen: screenId },
+    });
+    console.log(existingshowtime);
+
+    if (!existingshowtime) {
+      return Error(
+        ERROR_MESSAGES._NotFound(ALL_ERROR_MESSAGES.SHOWTIME_NOTFOUND)
+      );
+    }
+    console.log(existingshowtime);
 
     const existingscreen = await screenRepository.findOne({
       where: { id: +screenId },
@@ -40,11 +54,15 @@ export const addSeatSearvice = async (req: Request, res: Response) => {
     console.log(newData);
     const seatid = await seatsRepository.save(newData);
 
+    console.log("===========================================");
+
     // Define totalRows and seatsPerRow based on input or constants
     const totalRows = row_num;
     const seatsPerRow = seat_num;
 
     const seatLabels: SeatLabel[] = [];
+
+    console.log("---------------------------------------------------");
 
     // Loop through each row and seat to generate seat labels
     for (let row = 1; row <= totalRows; row++) {
@@ -56,14 +74,19 @@ export const addSeatSearvice = async (req: Request, res: Response) => {
         // Create new SeatLabel entity
         const newSeatLabel = seatlabelRepository.create({
           seat: seatid,
-          screen: screenId as number,
+          showTime: showtimeId,
+          screen: screenId,
           row: row,
           col: seat,
           seatlabel: label,
           isbooked: isBooked,
         });
 
+        console.log("-/////////////////////////////////////////////////////");
+
         seatLabels.push(newSeatLabel);
+
+        console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
       }
     }
 

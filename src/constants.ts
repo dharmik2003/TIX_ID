@@ -50,15 +50,44 @@ export const HTTP_STATUS_CODES = {
 };
 
 export const ALL_SUCCESS_MESSAGES = {
+  //News
+  NEWS_ADDDED: "New news Addded",
+
+  //comingsoon
+  COMINGSOON_ADDED: "New UpComing Movie Added",
+  COMINGSOON_FETCH: "New UpComing Movie Fetched",
+
+  NEWS_FETCh: "New Fetch",
+
+  //user
+  USER_ADDED: "New user Added",
+  USER_UPDATE: "User Updated",
+  USER_DELETE: "User Deleted",
+  USER_FOUND: "User Found",
+
+  //movies
   MOVIE_ADDED: "New Movie Added",
-  MOVIE_FETCH: "Data Fetch",
+  MOVIE_FETCH: "Movie Fetch",
+  MOVIE_DELETE: "Movie deleted",
+  MOVIE_UPDATE: "Movie Updated",
 
+  //Theater
   THEATER_ADDED: "New Theater Added",
-  THEATER_FETCH: "Movie Data Fetch",
+  THEATER_FETCH: "Theater Data Fetch",
+  THEATER_DELETE: "Theater Deleted",
+  THEATER_UPDATE: "Theater not Update",
 
-  SCREEN_ADDED: "New Screen Added",
+  //screen
+  SCREEN_ADDED: "New Screen added.",
+  SCREEN_UPDATE: "Screen UpdateD.",
+  SCREEN_FETCH: "Screen Fetch",
+  SCREEN_DELETE: "Screen Deleted.",
 
+  //ShowTime
   SHOWTIME_ADDED: "New Showtime added.",
+  SHOWTIME_UPDATE: "Showtime UpdateD.",
+  SHOWTIME_FETCH: "ShowTime Fetch",
+  SHOWTIME_DELETE: "Showtime Deleted.",
 
   SEATS_ADDED: "New Seats added.",
 
@@ -69,19 +98,68 @@ export const ALL_SUCCESS_MESSAGES = {
   VOUCHER_FOUND: "New Voucher Found",
   VOUCHER_UPDATE: "New Voucher Update",
   VOUCHER_DELETE: "New Voucher Delete",
+
+  //Myshow
+  MYSHOW_ADDED: "My Show Added",
+
+  //payment-history
+  PAYMENTHISTORY_FETCH: "Payment History Fetched",
+  PAYMENTHISTORY_DONE: "Payment",
+
+
+  //myticket
+  MYTICKET_FOUND: 'Tickets Found',
+
+
 };
+
+
 export const ALL_ERROR_MESSAGES = {
+  //News
+  NEWS_ADDDED: "New news not Add",
+  NEWS_FETCh: "New Not Fetch",
+
+  //comingsoon
+  COMINGSOON_ADDED: "New UpComing Movie not Add",
+  COMINGSOON_FETCH: "New UpComing Movie not Fetch",
+
+  //id
+  ID_NOT_PROVIDED: "Id is required field",
+
+  //user
+  USER_ADDED: "New user not Added",
+  USER_UPDATE: "User not Updated",
+  USER_NOTFOUND: "User not Found",
+  USER_GET: "User Get, not Found",
+  USER_DELETE: "User not Delete",
+
+  //movies
   MOVIE_ADDED: "New Movie not Add",
   MOVIE_FETCH: "Movies Data not Fetch",
   MOVIE_NOTFOUND: "Movies Not Found",
+  MOVIE_DELETE: "Movie not deleted",
+  MOVIE_UPDATE: "Movie not Update",
 
+  //Theater
   THEATER_ADDED: "New Theater not Added",
   THEATER_FETCH: "Theater Data not Fetch",
   THEATER_NOTFOUND: "Theater Not Found",
+  THEATER_DELETE: "Theater not Delete",
+  THEATER_UPDATE: "Theater not Update",
 
+  //Screen
+  SCREEN_ADDED: "New Screen Not added.",
   SCREEN_NOTFOUND: "Screen Not Found",
+  SCREEN_UPDATE: "Screen not Update.",
+  SCREEN_FETCH: "Screen not Fetch",
+  SCREEN_DELETE: "Screen not Delete.",
 
+  //ShowTime
   SHOWTIME_ADDED: "New Showtime Not added.",
+  SHOWTIME_NOTFOUND: "ShowTime Not Found",
+  SHOWTIME_UPDATE: "Showtime not Update.",
+  SHOWTIME_FETCH: "ShowTime not Fetch",
+  SHOWTIME_DELETE: "Showtime not Delete.",
 
   SEATS_ADDED: "New seats Not added.",
 
@@ -93,4 +171,27 @@ export const ALL_ERROR_MESSAGES = {
   VOUCHER_NOTFOUND: "New Voucher not Found",
   VOUCHER_UPDATE: "New Voucher not Update",
   VOUCHER_DELETE: "New Voucher not Delete",
+  VOUCHER_INVALID: "Invalied Voucher Code",
+
+  //Myshow
+  MYSHOW_ADDED: "My Show Not Added",
+  MYSHOW_NOTFOUND: "My Show Not Found",
+
+  //payment
+  PAYMENTHISTORY_DONE: "Payment not Done",
+
+  //Missing
+  PhoneNumber_SYSTEM:"already phone number then in system",
+
+  //token verify
+  TOKEN_VERIFY:"Wrong token",
+
+  //voucher
+  VOUCHER_NOTAPPLY:"Voucher not Apply",
+
+  //mytickets
+
+  MYTICKET_FOUND: 'No Tickets Found',
+
+
 };

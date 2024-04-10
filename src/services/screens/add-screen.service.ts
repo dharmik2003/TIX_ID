@@ -26,7 +26,8 @@ export const addScreenService = async (req: Request, res: Response) => {
 
     if (!existingData) {
       return Error(
-        ERROR_MESSAGES._NotFound(ALL_ERROR_MESSAGES.THEATER_NOTFOUND)
+        ERROR_MESSAGES._NotFound(ALL_ERROR_MESSAGES.THEATER_NOTFOUND),
+         HTTP_STATUS_CODES.NOT_FOUND
       );
     }
     console.log(existingData)
@@ -38,14 +39,14 @@ export const addScreenService = async (req: Request, res: Response) => {
     await screenRepository.save(newData);
 
     return Success(
-      SUCCESS_MESSAGES._SUCCESSFULLY(ALL_SUCCESS_MESSAGES.THEATER_ADDED),
+      SUCCESS_MESSAGES._SUCCESSFULLY(ALL_SUCCESS_MESSAGES.SCREEN_ADDED),
       HTTP_STATUS_CODES.OK,
       newData
     );
   } catch (error) {
     console.log("Error while add-screen.Service:", error);
     return Error(
-      ERROR_MESSAGES._FunctionCatchError(ALL_ERROR_MESSAGES.THEATER_ADDED),
+      ERROR_MESSAGES._FunctionCatchError(ALL_ERROR_MESSAGES.SCREEN_ADDED),
       HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR
     );
   }

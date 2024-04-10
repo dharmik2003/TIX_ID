@@ -11,7 +11,7 @@ import {
 import { Error, Success } from "../../utils/response.utils";
 import { Theaters } from "../../entities/theaters/theater.entity";
 
-export const createTheaterService = async (req: Request, res: Response) => {
+export const addTheaterService = async (req: Request, res: Response) => {
   try {
     const { name ,address,city,badge } = req.body;
 

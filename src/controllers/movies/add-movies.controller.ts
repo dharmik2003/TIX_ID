@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { createMovieService } from "../../services/movies/create-movies.service";
+import { createMovieService } from "../../services/movies/add-movies.service";
 
 export const addMovies = async (req: Request, res: Response) => {
   try {

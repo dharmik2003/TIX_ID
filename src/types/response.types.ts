@@ -4,3 +4,4 @@ export interface Responsetype {
   success: boolean;
   error: boolean;
 }
+

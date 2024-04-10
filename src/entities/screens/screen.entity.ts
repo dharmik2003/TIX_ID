@@ -1,19 +1,16 @@
-// screen.entity.ts
-
 import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
   ManyToOne,
   OneToMany,
-  UpdateDateColumn,
-  CreateDateColumn,
 } from "typeorm";
 import { Theaters } from "../theaters/theater.entity";
 import { Seats } from "../seats/seats.entity";
 import { MovieShows } from "../movie-shows/movie-shows.entity";
-import { Time } from "../time-stamp/time.entities";
 import { ShowTime } from "../show-time/showtime.entity";
+import { MyShow } from "../myshow/myshow.entity";
+import { Time } from "../time-stamp/time.entities";
 
 @Entity({ name: "screens" })
 export class Screens extends Time {
@@ -34,4 +31,7 @@ export class Screens extends Time {
 
   @OneToMany(() => ShowTime, (showTime) => showTime.screen)
   showtimes: ShowTime[];
+
+  @OneToMany(() => MyShow, (myshow) => myshow.screen)
+  myshows: MyShow[];
 }

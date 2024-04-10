@@ -14,7 +14,7 @@ import { Screens } from "../../entities/screens/screen.entity";
 
 export const addShowTimeService = async (req: Request, res: Response) => {
   try {
-    const { time, movieId, screenId } = req.body;
+    const {date, time,price, movieId, screenId } = req.body;
 
     const screenRepository = AppDataSource.getRepository(Screens);
     const moviesRepository = AppDataSource.getRepository(Movies);
@@ -29,20 +29,24 @@ export const addShowTimeService = async (req: Request, res: Response) => {
 
     //error message pending
     if (!existingmovies) {
-      return Error(ERROR_MESSAGES._NotFound(ALL_ERROR_MESSAGES.MOVIE_NOTFOUND));
+      return Error(
+        ERROR_MESSAGES._NotFound(ALL_ERROR_MESSAGES.MOVIE_NOTFOUND),
+        HTTP_STATUS_CODES.NOT_FOUND
+      );
     }
     console.log(existingmovies);
     if (!existingscreen) {
       return Error(
-        ERROR_MESSAGES._NotFound(ALL_ERROR_MESSAGES.SCREEN_NOTFOUND)
+        ERROR_MESSAGES._NotFound(ALL_ERROR_MESSAGES.SCREEN_NOTFOUND),
+        HTTP_STATUS_CODES.NOT_FOUND
       );
     }
     console.log(existingscreen);
 
-
-
       const newData = showtimeRepository.create({
+        date:date,
         time: time,
+        price:price,
         movie: existingmovies,
         screen: existingscreen,
       });

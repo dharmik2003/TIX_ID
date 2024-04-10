@@ -2,6 +2,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 import { Seats } from "../seats/seats.entity";
 import { Time } from "../time-stamp/time.entities";
+import { ShowTime } from "../show-time/showtime.entity";
 
 @Entity({ name: "seat_labels" })
 export class SeatLabel extends Time {
@@ -10,6 +11,9 @@ export class SeatLabel extends Time {
 
   @ManyToOne(() => Seats, (seat) => seat.seatLabels)
   seat: Seats;
+
+  @ManyToOne(() => ShowTime, (showTime) => showTime.seatLabels)
+  showTime: ShowTime;
 
   @Column({ name: "screen" })
   screen: number;
@@ -25,5 +29,4 @@ export class SeatLabel extends Time {
 
   @Column({ name: "is_booked" })
   isbooked: boolean;
-
 }
