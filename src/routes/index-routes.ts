@@ -14,6 +14,7 @@ import comingsoon from "./comingsoon/comingsoon.routes";
 import news from "./news/news.routes";
 import mytickets from "./mytickets/mytickets.routes";
 import tickets from "./tickets/tickets.routes";
+import razorpay from "./razorpay-payment/razorpaypayment.route";
 const router = express.Router();
 
 router.use("/signup", signup);
@@ -31,6 +32,7 @@ router.use("/comingsoon", comingsoon);
 router.use("/news", news);
 router.use("/mytickets", mytickets);
 router.use("/tickets", tickets);
+router.use("/razorpay", razorpay);
 
 
 export default router;

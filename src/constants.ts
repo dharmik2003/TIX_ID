@@ -110,6 +110,9 @@ export const ALL_SUCCESS_MESSAGES = {
   //myticket
   MYTICKET_FOUND: 'Tickets Found',
 
+  //razorpay payment
+
+  RAZORPAY: "Payment Done"
 
 };
 
@@ -194,4 +197,7 @@ export const ALL_ERROR_MESSAGES = {
   MYTICKET_FOUND: 'No Tickets Found',
 
 
+  //razorpay payment
+
+  RAZORPAY:"Payment Failed"
 };

@@ -16,7 +16,7 @@ export const addSeatLabelService = async (req: Request, res: Response) => {
     const seatLabelRepository = AppDataSource.getRepository(SeatLabel);
 
     const seatLabelData = await seatLabelRepository.find({
-      relations: ["seat", "showTime"],
+      relations: ["seat", "showTime",'showTime.movie'],
     });
     console.log(seatLabelData);
 

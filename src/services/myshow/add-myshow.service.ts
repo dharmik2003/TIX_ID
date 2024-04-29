@@ -25,7 +25,10 @@ export const addMyShowService = async (req: any, res: Response) => {
     console.log(movieId);
     console.log(ScreenId);
 
-    const userId = req.userId;
+    const userId1 = req.decoded;
+    const userId = userId1.details.id
+    console.log("userId", userId)
+    // const userId=1
 
     const userRepository = AppDataSource.getRepository(User);
     const movieRepository = AppDataSource.getRepository(Movies);

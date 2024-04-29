@@ -204,7 +204,7 @@ import { Screens } from "../../entities/screens/screen.entity";
 
 export const paymentHistoryService = async (req: any, res: Response) => {
   try {
-    const { myshowId } = req.body;
+    const { myshowId, tractionid } = req.body;
 
     const userId1 = req.decoded;
     const userId = userId1.details.id;
@@ -301,7 +301,7 @@ export const paymentHistoryService = async (req: any, res: Response) => {
       platformChanges: platformCharge,
       total: totalAmount,
       paymentDone: true,
-      transactionId: "0xdijpeigveprnbvprne",
+      transactionId: tractionid,
     });
 
 

@@ -1,9 +1,9 @@
 import express from "express";
-import { addpayment } from "../../controllers/payment-history/add-payment-history.controller";
+import { addRazorpayPayment } from "../../controllers/razorpay-payment/razorpaypayment.controller";
 import { verifyToken } from "../../middlewares/jwtTokenverify/jwtToken.middleware";
 
 const router = express.Router();
 
-router.post("/addpayment", verifyToken, addpayment)
+router.post("/payment",verifyToken, addRazorpayPayment)
 
 export default router;
